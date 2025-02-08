@@ -8,8 +8,8 @@ class TestPerformanceQuestion1:
 
     @pytest.mark.skipif("ENABLE_PERF" not in os.environ, reason="Teste de performance demora muito")
     def test_performance(self):
-        """Retornar 50 mil contratos não pode levar mais que 10 segundos"""
-        n = int(5e4)
+        """Retornar 1 milhão de contratos não pode levar mais que 10 segundos"""
+        n = int(1e6)
         contracts = [Contract(x, x) for x in range(2*n)]
         renegotiated = list(range(n))
 
