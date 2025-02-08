@@ -11,6 +11,6 @@ class Contracts:
     def get_top_N_open_contracts(self, open_contracts, renegotiated_contracts, top_n):
         result = []
         if open_contracts:
-            result = [open_contracts[0].id]
+            result = [ x.id for x in open_contracts[0:top_n] ]
 
         return result
