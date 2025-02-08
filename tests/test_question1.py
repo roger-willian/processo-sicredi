@@ -1,4 +1,4 @@
-from src.question1 import Contracts
+from src.question1 import Contracts, Contract
 
 class TestQuestion1:
 
@@ -11,4 +11,15 @@ class TestQuestion1:
         result = Contracts().get_top_N_open_contracts(contracts, renegotiated, n)
 
         expected = []
+        assert result == expected
+
+    def test_single_non_renegotiated(self):
+        """Caso apenas um contrato não renegociado, retornar ele"""
+        contracts = [Contract(1, 1)]
+        renegotiated = []
+        n = 10
+
+        result = Contracts().get_top_N_open_contracts(contracts, renegotiated, n)
+
+        expected = [1]
         assert result == expected
