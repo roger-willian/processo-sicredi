@@ -11,6 +11,7 @@ class Contracts:
     def get_top_N_open_contracts(self, open_contracts, renegotiated_contracts, top_n):
         result = []
         if open_contracts:
-            result = [ x.id for x in open_contracts[0:top_n] ]
+            contracts_sorted = sorted(open_contracts, key=lambda x: x.debt, reverse=True)
+            result = [ x.id for x in contracts_sorted[:top_n] ]
 
         return result

@@ -25,12 +25,13 @@ class TestQuestion1:
         assert result == expected
 
     def test_multiple_non_renegotiated(self):
-        """Caso todos os contratos não renegociados, retornar no máx. n"""
+        """Caso todos os contratos não renegociados, retornar no máx. os n maiores"""
         contracts = [Contract(x, x) for x in range(100)]
         renegotiated = []
         n = 10
 
         result = Contracts().get_top_N_open_contracts(contracts, renegotiated, n)
 
-        expected = list(range(n))
+        expected = [x.id for x in contracts[-n:]]
+        expected.reverse()
         assert result == expected
