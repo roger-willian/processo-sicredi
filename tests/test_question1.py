@@ -35,3 +35,15 @@ class TestQuestion1:
         expected = [x.id for x in contracts[-n:]]
         expected.reverse()
         assert result == expected
+
+    def test_multiple_but_one_renegotiated(self):
+        """Caso um dos maiores contratos foi renegociado, não retorná-lo"""
+        contracts = [Contract(x, x) for x in range(1,6)]
+        renegotiated = [3]
+        n = 3
+
+        result = Contracts().get_top_N_open_contracts(contracts, renegotiated, n)
+
+        expected = [5, 4, 2]
+        assert result == expected
+

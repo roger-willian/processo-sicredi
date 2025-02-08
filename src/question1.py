@@ -12,6 +12,7 @@ class Contracts:
         result = []
         if open_contracts:
             contracts_sorted = sorted(open_contracts, key=lambda x: x.debt, reverse=True)
-            result = [ x.id for x in contracts_sorted[:top_n] ]
+            non_renegotiated = [x for x in contracts_sorted if x.id not in renegotiated_contracts]
+            result = [ x.id for x in non_renegotiated[:top_n] ]
 
         return result
