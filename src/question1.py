@@ -9,4 +9,4 @@ class Contract:
 
 class Contracts:
     def get_top_N_open_contracts(self, open_contracts, renegotiated_contracts, top_n):
-        pass
+        return []
