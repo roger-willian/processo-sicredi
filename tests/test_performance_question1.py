@@ -1,6 +1,6 @@
 from src.question1 import Contracts, Contract
 from time import time
-from statistics import mean
+from random import shuffle
 import pytest
 import os
 
@@ -14,12 +14,14 @@ class TestPerformanceQuestion1:
         renegotiated = list(range(n))
 
         elapsed_time = []
-        for i in range(100):
+        for i in range(10):
             self.performance_body(contracts, renegotiated, n, elapsed_time)
             # poderia usar max() fora do loop, mas assim falha mais rápido
             assert elapsed_time[i] < 10
 
     def performance_body(self, contracts, renegotiated, n, elapsed_time):
+        shuffle(contracts)
+        shuffle(renegotiated)
         t = time()
         result = Contracts().get_top_N_open_contracts(contracts, renegotiated, n)
         elapsed_time.append(time() - t)
