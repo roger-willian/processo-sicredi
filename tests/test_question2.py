@@ -21,3 +21,13 @@ class TestQuestion2:
 
         expected = 1
         assert result == expected
+
+    def test_two_orders_not_combinable(self):
+        """Duas requisições não combináveis, duas viagens"""
+        orders = [60, 60]
+        n_max = 100
+
+        result = Orders().combine_orders(orders, n_max)
+
+        expected = 2
+        assert result == expected
