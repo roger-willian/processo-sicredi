@@ -1,5 +1,17 @@
 # Python Technical Challenge
+[![linter](https://github.com/roger-willian/processo-sicredi/actions/workflows/linter.yaml/badge.svg)](https://github.com/roger-willian/processo-sicredi/actions/workflows/linter.yaml)
+[![unit tests](https://github.com/roger-willian/processo-sicredi/actions/workflows/unit-tests.yaml/badge.svg)](https://github.com/roger-willian/processo-sicredi/actions/workflows/unit-tests.yaml)
+[![performance tests](https://github.com/roger-willian/processo-sicredi/actions/workflows/performance-tests.yaml/badge.svg)](https://github.com/roger-willian/processo-sicredi/actions/workflows/performance-tests.yaml)
 
+> [!NOTE]
+> As discussões sobre o design das implementações estão em [doc/question1.md](doc/question1.md) e [doc/question2.md](doc/question2.md).
+
+> [!NOTE]
+> As issues também estão incluídas nesse repositório.
+
+> [!NOTE]
+> Foram implementados testes unitários com garantia de cobertura de código e testes de desempenho que rodam em workflows separados dentro do Github actions.
+> Também foi implementado um workflow para executar o linter e aumentar a padronização do código.
 
 ## Question 1
 
