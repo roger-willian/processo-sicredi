@@ -64,3 +64,14 @@ class TestQuestion2:
 
         expected = 2
         assert result == expected
+
+    def test_four_orders_two_combinable(self):
+        """Quatro requisições, duas combináveis, apenas três viagens"""
+        orders = [100, 70, 30, 10]
+        shuffle(orders)
+        n_max = 100
+
+        result = Orders().combine_orders(orders, n_max)
+
+        expected = 3
+        assert result == expected
