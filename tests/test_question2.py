@@ -1,4 +1,5 @@
 from src.question2 import Orders
+from random import shuffle
 
 class TestQuestion2:
 
@@ -40,4 +41,26 @@ class TestQuestion2:
         result = Orders().combine_orders(orders, n_max)
 
         expected = 1
+        assert result == expected
+
+    def test_three_orders_not_combinable(self):
+        """Três requisições não combináveis, três viagens"""
+        orders = [60, 70, 80]
+        shuffle(orders)
+        n_max = 100
+
+        result = Orders().combine_orders(orders, n_max)
+
+        expected = 3
+        assert result == expected
+
+    def test_three_orders_combinable(self):
+        """Três requisições combináveis, apenas duas viagens"""
+        orders = [70, 30, 10]
+        shuffle(orders)
+        n_max = 100
+
+        result = Orders().combine_orders(orders, n_max)
+
+        expected = 2
         assert result == expected
