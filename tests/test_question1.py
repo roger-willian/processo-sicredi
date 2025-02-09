@@ -1,6 +1,9 @@
+"""Testes unitários da implementação da Questão 1"""
+
 from src.question1 import Contracts, Contract
 
 class TestQuestion1:
+    """Classe com os testes unitários"""
 
     def test_no_contracts(self):
         """Caso a lista de contratos esteja vazia deve retornar uma lista vazia"""
@@ -8,7 +11,7 @@ class TestQuestion1:
         renegotiated = []
         n = 10
 
-        result = Contracts().get_top_N_open_contracts(contracts, renegotiated, n)
+        result = Contracts().get_top_n_open_contracts(contracts, renegotiated, n)
 
         expected = []
         assert result == expected
@@ -19,7 +22,7 @@ class TestQuestion1:
         renegotiated = []
         n = 10
 
-        result = Contracts().get_top_N_open_contracts(contracts, renegotiated, n)
+        result = Contracts().get_top_n_open_contracts(contracts, renegotiated, n)
 
         expected = [1]
         assert result == expected
@@ -30,9 +33,9 @@ class TestQuestion1:
         renegotiated = []
         n = 10
 
-        result = Contracts().get_top_N_open_contracts(contracts, renegotiated, n)
+        result = Contracts().get_top_n_open_contracts(contracts, renegotiated, n)
 
-        expected = [x.id for x in contracts[-n:]]
+        expected = [x.id_ for x in contracts[-n:]]
         expected.reverse()
         assert result == expected
 
@@ -42,8 +45,7 @@ class TestQuestion1:
         renegotiated = [3]
         n = 3
 
-        result = Contracts().get_top_N_open_contracts(contracts, renegotiated, n)
+        result = Contracts().get_top_n_open_contracts(contracts, renegotiated, n)
 
         expected = [5, 4, 2]
         assert result == expected
-

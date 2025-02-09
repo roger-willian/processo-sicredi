@@ -1,7 +1,10 @@
-from src.question2 import Orders
+"""Testes unitários da implementação da questão 2"""
+
 from random import shuffle
+from src.question2 import Orders
 
 class TestQuestion2:
+    """Testes unitários"""
 
     def test_no_orders(self):
         """Sem requisições, sem viagens"""

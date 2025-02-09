@@ -1,10 +1,13 @@
-from src.question2 import Orders
+"""Testes de desempenho da implementação da Questão 2"""
+
 from time import time
 from random import choices, shuffle
-import pytest
 import os
+import pytest
+from src.question2 import Orders
 
 class TestPerformanceQuestion2:
+    """Testes de desempenho"""
 
     @pytest.mark.skipif("ENABLE_PERF" not in os.environ, reason="Teste de performance demora muito")
     def test_performance(self):
@@ -20,10 +23,9 @@ class TestPerformanceQuestion2:
             assert elapsed_time[i] < 10
 
     def performance_body(self, requests, n_max, elapsed_time):
+        """Código cujo desempenho interessa"""
+
         shuffle(requests)
         t = time()
-        result = Orders().combine_orders(requests, n_max)
+        Orders().combine_orders(requests, n_max)
         elapsed_time.append(time() - t)
-
-
-
