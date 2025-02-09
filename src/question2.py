@@ -1,7 +1,7 @@
 class Orders:
     def combine_orders(self, requests, n_max):
         result = 0
-        sorted_requests = sorted(requests)
+        sorted_requests = sorted(requests, reverse=True)
         while sorted_requests:
             result += 1
             if len(sorted_requests) == 1:
